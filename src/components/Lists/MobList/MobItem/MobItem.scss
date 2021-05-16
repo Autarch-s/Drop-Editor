@@ -45,11 +45,11 @@
         position: relative;
         padding: 0px 12px;
         background-color: rgba(55,55,55,1);//var(--color-halfGray);
-        background: linear-gradient(270deg, rgb(65, 84, 97) 29%, rgba(55,55,55,1) 84%);
+        //background: linear-gradient(270deg, rgb(65, 84, 97) 29%, rgba(55,55,55,1) 84%);
         border-radius: 4px 0 0 4px;
         min-height: 40px;
         margin-right: 10px;
-        border-left: 4px solid var(--color-enabledGray);//rgb(165, 110, 39);
+        border-left: 4px solid var(--color-lightGray)//rgb(165, 110, 39);
     }
 
     &__stats{
