@@ -1,0 +1,90 @@
+.AddMobList{
+    position: relative;
+    width: 660px;
+    background-color: var(--color-halfGray);
+    border-radius: 5px;
+    box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.11);
+    @include flex(se, c, row);
+    padding: 0 20px;
+    height: 85px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid var(--color-disabledGray);
+    transition: .1s;
+    z-index: 5;
+
+    &--error{
+        border: 1px solid var(--color-error);
+        padding-bottom: 15px;
+    }
+
+    &__error{
+        display: none;
+        position: absolute;
+        color: var(--color-error);
+        font-size: 12px;
+        bottom: 4px;
+        left: 35px;
+    }
+    &__error--show{
+        display: block;
+    }
+
+    &__title{
+        position: absolute;
+        left: 30px;
+        color: white;
+        top: -12px;
+        background: linear-gradient(0deg, rgba(55,55,55,1) 50%, rgba(50,50,50,1) 50%);
+        border-radius: 2px;
+        padding: 0 20px;
+    }
+
+    &__input-db{
+        margin-top: 0px !important;
+        width: 300px  !important;
+        position: relative !important;
+    }
+
+    &__input{
+        font-weight: 300;
+        position: relative;
+        border: none;
+        padding: 12px 10px;
+        height: 31px;
+        font-size: 13px;
+        border-radius: 2px;
+        width: 75px;
+        margin-top: 11px;
+    }
+    &__input:focus{
+        outline: none;
+        box-shadow: 0px 0px 1px 2px var(--color-enabledGray);
+    }
+    &__button{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        transition: .3s;
+        position: relative;
+        margin-top: 11px;
+        padding: 0 40px;
+        background-color: var(--color-disabledGray);
+        //background-image: linear-gradient(90deg,  rgb(34, 107, 216) 0%, rgba(16, 70, 150, 0.795) 90%);
+        //background-color: #ee2f0d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 32px;
+    }
+    &__button:hover{
+        background-color: #0e4d88;
+        box-shadow: 0px 0px 4px 2px rgb(0, 153, 255);
+    }
+  /*   &__button:hover{
+        background-color: #b3230a;
+        box-shadow: 0px 0px 4px 2px rgb(247, 110, 110);
+    } */
+
+}
+

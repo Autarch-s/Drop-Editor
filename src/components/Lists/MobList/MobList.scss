@@ -1,0 +1,126 @@
+.MobList{
+    position: relative;
+    width: 660px;
+    //padding: 0 30px;
+    background-color: var(--color-halfGray);
+    //border-radius: 13px;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    transform: scale(0);
+    z-index: 3;
+    
+
+    &__header{
+        @include flex(i,c, row);
+        padding: 10px 0px 0px 110px;
+        height: 70px;
+        border-bottom: 1px solid var(--color-disabledGray);
+        background: linear-gradient(90deg, rgb(48, 48, 49) 25%, rgba(55,55,55,1) 84%);
+    }
+
+    &__image-container{
+        @include flex(fe, fe, row);
+        position: absolute;
+        width: 60px;
+        height: 120px;
+        left: 35px;
+        top: -60px;
+    }
+
+    &__image{
+        max-height: 110px;
+        max-width: 60px;
+        bottom: 0;
+        position: absolute;
+    }
+    &__name{
+        color: var(--color-white);
+    }
+    &__level{
+        margin-left: 6px;
+        font-size: 15px;
+        color: var(--color-lightGray);
+    }
+    &__id{
+        margin-left: 5px;
+        color: var(--color-white);
+    }
+
+    &__actionButton{
+        position: absolute;
+        right: 50px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    &__actionButton--add{
+        right: 70px;
+    }
+    &__actionButton--delete{
+        right: 40px;
+    
+    }
+
+    &__actionButton:hover{
+        filter: drop-shadow(0 0 14px rgb(229, 236, 255)) invert(80%) sepia(29%) saturate(1186%) hue-rotate(164deg) brightness(102%) contrast(98%);
+    }
+
+    &__list{
+        list-style-type: none;
+        padding: 25px 30px;
+    }
+
+    &__form{
+        position: relative;
+        @include flex(sa,i,row);
+         background-color: var(--color-disabledGray);
+        box-shadow: 0px 20px 0px 0px var(--color-disabledGray); 
+        border-radius: 0px 0px 10px 10px ;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        z-index: 6;
+
+    }
+    &__input{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        position: relative;
+        border: none;
+        padding: 12px 10px;
+        height: 30px;
+        font-size: 13px;
+        border-radius: 2px;
+        width: 75px;
+        top: 15px;
+    }
+    &__input:focus{
+        outline: none;
+        box-shadow: 0px 0px 1px 2px var(--color-enabledGray);
+    }
+    &__input-db{
+        position: relative !important;
+    }
+    &__button{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        transition: .3s;
+        position: relative;
+        top: 14px;
+        padding: 0 15px;
+        background-color: var(--color-lightGray);
+        background-color: var(--color-halfGray);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+        height: 32px;
+    }
+    &__button:hover{
+        background-color: var(--color-enabledGray);
+    }
+
+
+}

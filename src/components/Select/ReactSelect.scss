@@ -1,0 +1,17 @@
+.MobListSelect{
+   @include react-select;
+
+    &__menu{
+        margin-top: 0px !important;
+    }
+}
+
+.AddMobListSelect{
+    @include react-select;
+    margin-top: 0px;
+    transition: .4s all !important;
+ 
+     &__menu{
+         margin-top: 12px !important;
+     }
+ }

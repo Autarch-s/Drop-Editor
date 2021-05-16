@@ -1,0 +1,51 @@
+.DownloadButton{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-lightGray);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    border: 3px solid var(--color-disabledGray);
+    
+    & img{
+        transition: .2s;
+        width: 30px;
+        height: 30px;
+    }
+    &__title{
+        position: absolute;
+        width: 100px;
+        text-align: center;
+        color: var(--color-lightGray);
+        font-size: 20px;
+        top: 65px;
+        left: -17px;
+        font-family: 'Teko', sans-serif;
+    }
+
+    &__text{
+        position: absolute;
+        color: var(--color-lightGray);
+        top: 70px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        left: -5px;
+    }
+
+    &:hover{
+        border: 3px solid var(--color-enabledGray);
+    }
+
+    &:hover > img{
+        width: 40px;
+        height: 40px;
+    }
+
+    &:hover > &__text{
+        color: var(--color-enabledGray);
+    }
+}
+
