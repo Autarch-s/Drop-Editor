@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../../img/logo.png'
 
-
-
 const Footer = () => {
     return (
         <footer className="Footer">
@@ -17,7 +15,7 @@ const Footer = () => {
                     <li className="Footer__item">Github</li>
                 </ul>
             </nav>
-            <p className="Footer__rights">All rights reserved @ 2021 Truciak Siusiak</p>
+            <p className="Footer__rights">All rights reserved @ 2021 Trusiak</p>
         </footer>
     );
 };
