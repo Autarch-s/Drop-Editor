@@ -2,10 +2,10 @@ import React from 'react';
 import Select, { createFilter } from 'react-select'
 import { FixedSizeList as List } from "react-window";
 
-const ReactSelect = ({setChosenItem, classPrefix="ReactSelect", options, defaultValue, className, portalTarget}) => {
+const ReactSelect = ({setChosenItem, classPrefix="ReactSelect", options, defaultValue, value, className, portalTarget}) => {
     return (
         <Select 
-                defaultValue={defaultValue}
+                //defaultValue={defaultValue}
                 onChange={setChosenItem} 
                 setChosenItem={setChosenItem}
                 classNamePrefix={classPrefix} 
@@ -14,6 +14,7 @@ const ReactSelect = ({setChosenItem, classPrefix="ReactSelect", options, default
                 placeholder="Wybierz..."
                 components={{ MenuList }}
                 menuPortalTarget={portalTarget}
+                //value={value}
                 required
                 filterOption={createFilter({ignoreAccents: false})}
              />

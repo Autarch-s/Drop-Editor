@@ -3,7 +3,7 @@ import MobList from './MobList/MobList';
 import ItemList from "./ItemList/ItemList"
 import { GlobalContext } from './../../context/GlobalState';
 import { convertTextData } from "../../helpers/dataConverter";
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AddMobList from './MobList/AddMobList/AddMobList';
 
 
@@ -46,20 +46,22 @@ const List = () => {
         <>
             <AddMobList/>
             <div className="List">
-                { loading ? (<h1 style={{color: "white"}}>Ładowanie</h1> 
-                ) : (
-                <Switch>
-                    <Redirect exact from="/" to="/mobs/" />
-                    <Route path="/mobs" exact render={()=>mobLists} />
-                    <Route path="/items/:id" component={ItemList} />
-                    <Route path="/items"  render={() => (
-                        <div>Itemy</div>
-                    )} />
-                    <Route render={() => (
-                        <div>Errłoł</div>
-                    )} />
-                </Switch>
-                )}
+                <div className="wrapper">
+                    { loading ? (<div className="Loader"/>
+                    ) : (
+                    <Switch>
+                        <Route path="/" exact render={()=>mobLists} />
+                        <Route path="/items/:id" component={ItemList} />
+                        <Route render={() => (
+                            <>
+                                <div style={{color: 'gray', textAlign: 'center', fontSize: '55px'}}>404</div>
+                                <div style={{color: 'white',  textAlign: 'center', fontSize: '55px'}}>Nie ma takiej strony!</div>
+                                <div style={{color: 'white', textAlign: 'center', fontSize: '25px'}}>Coś Ci się pomyliło.</div>
+                            </>
+                        )} />
+                    </Switch>
+                    )}
+                </div>
             </div>
         </>
     );

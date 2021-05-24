@@ -17,6 +17,25 @@ h2{
         font-size: 28px;
         font-weight: 200;
     }
+    &__level{
+        font-size: 15px;
+    }
+
+    &__name{
+        @include breakpoint-down("tiny"){
+            @include fluid-type(360px, 840px, 13px, 20px);
+        } 
+    }
+    &__level{
+        @include breakpoint-down("tiny"){
+            @include fluid-type(360px, 840px, 10px, 18px);
+        }  
+    }
+    &__input{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+    }
 }
 
 .AddMobList{
@@ -30,6 +49,29 @@ h2{
         font-size: 15px;
         font-weight: 400;
     }
+
+    &__amount, &__chance{
+        @include breakpoint-down("small"){
+            @include fluid-type(360px, 840px, 10px, 15px);
+        } 
+    }
+
+    &__name {
+        @include breakpoint-down("small"){
+            @include fluid-type(360px, 840px, 11px, 15px);
+        } 
+    }
+
+    &__input{
+        font-size: 17px;
+
+        @include breakpoint-down("small"){
+            @include fluid-type(360px, 840px, 10px, 17px);
+        } 
+    }
+
+   
+    
 }
 
 .ItemList{
@@ -39,6 +81,12 @@ h2{
         font-size: 15px;
         font-weight: 500;
     }
+
+    @include breakpoint-down("small"){
+        &__title{
+            @include fluid-type(360px, 840px, 12px, 15px);
+        }
+    } 
 }
 
 .ItemMob{
@@ -47,4 +95,8 @@ h2{
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
     }
+}
+
+.Menu__option{
+    font-size: 10px;
 }

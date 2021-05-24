@@ -308,7 +308,8 @@ const initialState = {
           }
         ]
       }
-    ]
+    ],
+    isHamburgerOpen: false
 }
 
 export const GlobalContext = createContext(initialState);
@@ -384,6 +385,12 @@ export const GlobalProvider = ({children}) => {
           type: 'CHANGE_FIRST_RUN_STATUS',
       });
     }
+
+    function toogleHamburgerMenu(){
+      dispatch({
+          type: 'CHANGE_HAMBURGER_STATUS',
+      });
+    }
   
     return (
         <GlobalContext.Provider value={{
@@ -392,6 +399,7 @@ export const GlobalProvider = ({children}) => {
             drop: state.drop, 
             itemNames: state.itemNames, 
             mobNames: state.mobNames, 
+            isHamburgerOpen: state.isHamburgerOpen,
             addDrop,
             addItem, 
             changeActiveList, 
@@ -401,7 +409,8 @@ export const GlobalProvider = ({children}) => {
             addMobNames, 
             addMob, 
             deleteMob, 
-            changeFirstRunStatus
+            changeFirstRunStatus,
+            toogleHamburgerMenu
           }}>
           {children}
         </GlobalContext.Provider>)

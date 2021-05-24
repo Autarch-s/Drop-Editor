@@ -1,7 +1,8 @@
 $breakpoints: (
-    "tiny": "550px",
-    "small": "875px",
-    "medium": "1130px",
+    "mobile": "450px",
+    "tiny": "650px",
+    "small": "840px",
+    "medium": "1160px",
 );
 
 @mixin breakpoint-down($size) {

@@ -1,3 +1,4 @@
 .App{
-    @include flex(c,c, column);
+    @include flex(sb,c, column);
+    height: 100vh;
 }

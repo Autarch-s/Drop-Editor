@@ -1,10 +1,34 @@
-import gsap, { Expo } from 'gsap'
+import gsap from 'gsap'
 
 export function createListAnimation(list){
     const tl = gsap.timeline();
     tl.to(list, {scale: 1, duration: .25, ease: 'power4.easeIn'})
         .set(list, {zIndex: 0})
 } 
+
+export function createElementAnimation(element){
+    const tl = gsap.timeline();
+    tl.to(element, {scale: 1, y:0, autoAlpha: 1, duration: .7, ease: 'Expo.easeOut'})
+        .set(element, {zIndex: 0})
+} 
+
+export function createListElementAnimation(element){
+    let randomShowTime = Math.floor(Math.random() * (300 - 100)) + 100;
+    setTimeout(()=>{
+        const tl = gsap.timeline();
+        tl.to(element, {autoAlpha:1, scale: 1, duration: .3, ease: 'power4.easeOut'})
+    }, randomShowTime)
+} 
+
+export function showMenu(menu){
+    const tl = gsap.timeline();
+    tl.to(menu, {x:0, duration: .35, ease: 'power4.easeOut'})
+}
+
+export function hideMenu(menu){
+    const tl = gsap.timeline();
+    tl.to(menu, {x:-700, duration: .35, ease: 'power4.easeIn'})
+}
 
 export function moveListAnimation(list){
     const listHeight = parseInt(window.getComputedStyle(list).getPropertyValue('height'));
@@ -22,14 +46,6 @@ export function removeElementAnimation(element, handleDelete){
     const tl = gsap.timeline();
     tl.to(element, {onComplete: handleDelete, scaleY: 0, autoAlpha:0, duration: .25, ease: 'power4.easeIn'})
 }
-
-export function createElementAnimation(element){
-    let randomShowTime = Math.floor(Math.random() * (300 - 100)) + 100;
-    setTimeout(()=>{
-        const tl = gsap.timeline();
-        tl.to(element, {autoAlpha:1, scale: 1, duration: .3, ease: 'power4.easeOut'})
-    }, randomShowTime)
-} 
 
 export function shakeElement(element){
     const tl_Shaking = gsap.timeline({repeat: 0, yoyo: true});

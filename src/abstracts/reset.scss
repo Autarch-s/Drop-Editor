@@ -14,6 +14,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 body{
     background-color: var(--color-gray);
     font-family: 'Poppins', sans-serif;

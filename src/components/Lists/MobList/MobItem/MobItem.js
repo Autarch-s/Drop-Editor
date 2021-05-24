@@ -4,7 +4,8 @@ import editIcon from "../../../../img/icon-edit.svg"
 import { GlobalContext } from "../../../../context/GlobalState";
 import { Link } from 'react-router-dom'
 import { convertItemId } from "../../../../helpers/itemIdConverter"
-import { removeElementAnimation, createElementAnimation } from "../../../../helpers/animations";
+import { removeElementAnimation, createListElementAnimation } from "../../../../helpers/animations";
+import { removeIdFromName } from "../../../../helpers/idRemover"
 
 const MobItem = ({item, mob}) => {
 
@@ -26,11 +27,12 @@ const MobItem = ({item, mob}) => {
         setEdit((toggle) => !toggle)
     }
     function getItemName(value) {
-        return itemNames.find(item => item.value === value).label
+        let itemName = itemNames.find(item => item.value === value).label
+        return removeIdFromName(itemName)
     }
 
     useLayoutEffect(()=>{
-        createElementAnimation(mobItem.current);
+        createListElementAnimation(mobItem.current);
     }, [])
     
     return (
@@ -75,7 +77,6 @@ const MobItemContentEdit = ({edit, item, stopEditing, mob}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         stopEditing();
-
         editItem({
             id: item.id,
             count: parseInt(amountInputValue),

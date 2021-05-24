@@ -60,6 +60,12 @@ const AppReducer = (state, action) => {
           ...state,
           firstRun: true
         } 
+        case 'CHANGE_HAMBURGER_STATUS': {
+          return {
+            ...state,
+            isHamburgerOpen: !state.isHamburgerOpen
+          }
+        }
       case 'DELETE_MOB': {
         return {
           ...state,

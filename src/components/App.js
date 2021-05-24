@@ -1,10 +1,9 @@
 import { GlobalProvider} from '../context/GlobalState';
 import { BrowserRouter as Router } from 'react-router-dom';
-import DownloadButton from './Buttons/DownloadButton';
-import Categories from './Categories/Categories';
 import Header from './Header/Header';
 import List from './Lists/List';
-import UploadButton from './Buttons/UploadButton';
+import ScrollTopButton from './Buttons/ScrollTopButton/ScrollTopButton';
+import Footer from './Footer/Footer';
 
 
 function App() {
@@ -13,11 +12,10 @@ function App() {
       <GlobalProvider>
         <div className="App">
             <Header/>
-            <Categories/>
             <List/>
-            <UploadButton/>
-            <DownloadButton/>
+            <Footer/>
         </div>
+        <ScrollTopButton/>
       </GlobalProvider>
     </Router>
   );

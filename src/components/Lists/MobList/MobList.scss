@@ -1,22 +1,36 @@
 .MobList{
     position: relative;
     width: 660px;
-    //padding: 0 30px;
     background-color: var(--color-halfGray);
-    //border-radius: 13px;
     box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
+    margin-top: 60px;
     font-family: 'Poppins', sans-serif;
     transform: scale(0);
     z-index: 3;
-    
 
+    @include breakpoint-down("small"){
+        width: 80vw;
+    }
+    @include breakpoint-down("tiny"){
+        width: 90vw;
+        margin-top: 40px;
+    }
+    
     &__header{
         @include flex(i,c, row);
+        position: relative;
         padding: 10px 0px 0px 110px;
         height: 70px;
+        z-index: 7;
         border-bottom: 1px solid var(--color-disabledGray);
-        background: linear-gradient(90deg, rgb(48, 48, 49) 25%, rgba(55,55,55,1) 84%);
+        background: linear-gradient(90deg, rgb(49, 49, 49) 25%, rgba(55,55,55,1) 84%);
+
+        @include breakpoint-down("tiny"){
+            padding: 10px 0px 0px 70px;
+            background: none;
+            background-color: var(--color-halfGray);
+            margin: 0 14px;
+        }
     }
 
     &__image-container{
@@ -26,6 +40,10 @@
         height: 120px;
         left: 35px;
         top: -60px;
+
+        @include breakpoint-down("tiny"){
+            left: 0px;
+        }
     }
 
     &__image{
@@ -33,14 +51,29 @@
         max-width: 60px;
         bottom: 0;
         position: absolute;
+        filter: drop-shadow(0px 0px 6px rgb(30, 37, 39));
+
+        @include breakpoint-down("tiny"){
+            max-width: 50px;
+        }
+    }
+    &__title-containter{
+        @include flex(c, c, row);
+        @include breakpoint-down("tiny"){
+            @include flex(c, fs, column);
+        }
     }
     &__name{
         color: var(--color-white);
+        text-align: center;
     }
     &__level{
         margin-left: 6px;
-        font-size: 15px;
         color: var(--color-lightGray);
+
+        @include breakpoint-down("tiny"){
+            margin-left: 0px;
+        }
     }
     &__id{
         margin-left: 5px;
@@ -49,78 +82,43 @@
 
     &__actionButton{
         position: absolute;
-        right: 50px;
         outline: none;
         border: none;
         background-color: transparent;
         cursor: pointer;
     }
+
     &__actionButton--add{
         right: 70px;
+        
+        @include breakpoint-down("tiny"){
+            right: 35px;
+        }
     }
     &__actionButton--delete{
         right: 40px;
-    
+        @include breakpoint-down("tiny"){
+            right: 10px;
+        }
     }
 
     &__actionButton:hover{
-        filter: drop-shadow(0 0 14px rgb(229, 236, 255)) invert(80%) sepia(29%) saturate(1186%) hue-rotate(164deg) brightness(102%) contrast(98%);
+        filter: drop-shadow(0 0 14px rgb(240, 243, 252)) invert(80%) sepia(29%) saturate(1186%) hue-rotate(164deg) brightness(102%) contrast(98%);
+    }
+    &__addIcon{
+        @include breakpoint-down("tiny"){
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__list{
         list-style-type: none;
         padding: 25px 30px;
-    }
 
-    &__form{
-        position: relative;
-        @include flex(sa,i,row);
-         background-color: var(--color-disabledGray);
-        box-shadow: 0px 20px 0px 0px var(--color-disabledGray); 
-        border-radius: 0px 0px 10px 10px ;
-        margin-bottom: 10px;
-        padding-bottom: 5px;
-        z-index: 6;
-
+        @include breakpoint-down("tiny"){
+            padding: 15px 2.5vw;
+        }
     }
-    &__input{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-        position: relative;
-        border: none;
-        padding: 12px 10px;
-        height: 30px;
-        font-size: 13px;
-        border-radius: 2px;
-        width: 75px;
-        top: 15px;
-    }
-    &__input:focus{
-        outline: none;
-        box-shadow: 0px 0px 1px 2px var(--color-enabledGray);
-    }
-    &__input-db{
-        position: relative !important;
-    }
-    &__button{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        transition: .3s;
-        position: relative;
-        top: 14px;
-        padding: 0 15px;
-        background-color: var(--color-lightGray);
-        background-color: var(--color-halfGray);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 10px;
-        height: 32px;
-    }
-    &__button:hover{
-        background-color: var(--color-enabledGray);
-    }
-
 
 }
